@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline' data:" />
+		<title>Zotero Report</title>
+		<link rel="stylesheet" type="text/css" href="data:text/css;base64,Ym9keSB7Cgljb2xvci1zY2hlbWU6IGxpZ2h0IGRhcms7CgkvKiBUaGVzZSBzaG91bGQgYmUgdGhlIGRlZmF1bHRzLCBidXQganVzdCBpbiBjYXNlOiAqLwoJYmFja2dyb3VuZDogQ2FudmFzOwoJY29sb3I6IENhbnZhc1RleHQ7Cn0KCmEgewoJdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7Cn0KCmJvZHkgewoJcGFkZGluZzogMDsKfQoKdWwucmVwb3J0IGxpLml0ZW0gewoJYm9yZGVyLXRvcDogNHB4IHNvbGlkICM1NTU7CglwYWRkaW5nLXRvcDogMWVtOwoJcGFkZGluZy1sZWZ0OiAxZW07CglwYWRkaW5nLXJpZ2h0OiAxZW07CgltYXJnaW4tYm90dG9tOiAyZW07Cn0KCmgxLCBoMiwgaDMsIGg0LCBoNSwgaDYgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDIgewoJbWFyZ2luOiAwIDAgLjVlbTsKfQoKaDIucGFyZW50SXRlbSB7Cglmb250LXdlaWdodDogNjAwOwoJZm9udC1zaXplOiAxZW07CglwYWRkaW5nOiAwIDAgLjVlbTsKCWJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2NjOwp9CgovKiBJZiBjb21iaW5pbmcgY2hpbGRyZW4sIGRpc3BsYXkgcGFyZW50IHNsaWdodGx5IGxhcmdlciAqLwp1bC5yZXBvcnQuY29tYmluZUNoaWxkSXRlbXMgaDIucGFyZW50SXRlbSB7Cglmb250LXNpemU6IDEuMWVtOwoJcGFkZGluZy1ib3R0b206IC43NWVtOwoJbWFyZ2luLWJvdHRvbTogLjRlbTsKfQoKaDIucGFyZW50SXRlbSAudGl0bGUgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDMgewoJbWFyZ2luLWJvdHRvbTogLjZlbTsKCWZvbnQtd2VpZ2h0OiA2MDAgIWltcG9ydGFudDsKCWZvbnQtc2l6ZTogMWVtOwoJZGlzcGxheTogYmxvY2s7Cn0KCi8qIE1ldGFkYXRhIHRhYmxlICovCnRoIHsKCXZlcnRpY2FsLWFsaWduOiB0b3A7Cgl0ZXh0LWFsaWduOiByaWdodDsKCXdpZHRoOiAxNSU7Cgl3aGl0ZS1zcGFjZTogbm93cmFwOwp9Cgp0ZCB7CglwYWRkaW5nLWxlZnQ6IC41ZW07Cn0KCgp1bC5yZXBvcnQsIHVsLm5vdGVzLCB1bC50YWdzIHsKCWxpc3Qtc3R5bGU6IG5vbmU7CgltYXJnaW4tbGVmdDogMDsKCXBhZGRpbmctbGVmdDogMDsKfQoKLyogVGFncyAqLwpoMy50YWdzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLnRhZ3MgewoJbGluZS1oZWlnaHQ6IDEuNzVlbTsKCWxpc3Qtc3R5bGU6IG5vbmU7Cn0KCnVsLnRhZ3MgbGkgewoJZGlzcGxheTogaW5saW5lOwp9Cgp1bC50YWdzIGxpOm5vdCg6bGFzdC1jaGlsZCk6YWZ0ZXIgewoJY29udGVudDogJywgJzsKfQoKCi8qIENoaWxkIG5vdGVzICovCmgzLm5vdGVzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLm5vdGVzIHsKCW1hcmdpbi1ib3R0b206IDEuMmVtOwp9Cgp1bC5ub3RlcyA+IGxpOmZpcnN0LWNoaWxkIHAgewoJbWFyZ2luLXRvcDogMDsKfQoKdWwubm90ZXMgPiBsaSB7CglwYWRkaW5nOiAuN2VtIDA7Cn0KCnVsLm5vdGVzID4gbGk6bm90KDpsYXN0LWNoaWxkKSB7Cglib3JkZXItYm90dG9tOiAxcHggI2NjYyBzb2xpZDsKfQoKCnVsLm5vdGVzID4gbGkgcDpmaXJzdC1jaGlsZCB7CgltYXJnaW4tdG9wOiAwOwp9Cgp1bC5ub3RlcyA+IGxpIHA6bGFzdC1jaGlsZCB7CgltYXJnaW4tYm90dG9tOiAwOwp9CgovKiBBZGQgcXVvdGF0aW9uIG1hcmtzIGFyb3VuZCBibG9ja3F1b3RlICovCnVsLm5vdGVzID4gbGkgYmxvY2txdW90ZSBwOm5vdCg6ZW1wdHkpOmJlZm9yZSwKbGkubm90ZSBibG9ja3F1b3RlIHA6bm90KDplbXB0eSk6YmVmb3JlIHsKCWNvbnRlbnQ6ICfigJwnOwp9Cgp1bC5ub3RlcyA+IGxpIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyLApsaS5ub3RlIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyIHsKCWNvbnRlbnQ6ICfigJ0nOwp9CgovKiBQcmVzZXJ2ZSB3aGl0ZXNwYWNlIG9uIHBsYWludGV4dCBub3RlcyAqLwp1bC5ub3RlcyBsaSBwLnBsYWludGV4dCwgbGkubm90ZSBwLnBsYWludGV4dCwgZGl2Lm5vdGUgcC5wbGFpbnRleHQgewoJd2hpdGUtc3BhY2U6IHByZS13cmFwOwp9CgovKiBEaXNwbGF5IHRhZ3Mgd2l0aGluIGNoaWxkIG5vdGVzIGlubGluZSAqLwp1bC5ub3RlcyBoMy50YWdzIHsKCWRpc3BsYXk6IGlubGluZTsKCWZvbnQtc2l6ZTogMWVtOwp9Cgp1bC5ub3RlcyBoMy50YWdzOmFmdGVyIHsKCWNvbnRlbnQ6ICcgJzsKfQoKdWwubm90ZXMgdWwudGFncyB7CglkaXNwbGF5OiBpbmxpbmU7Cn0KCnVsLm5vdGVzIHVsLnRhZ3MgbGk6bm90KDpsYXN0LWNoaWxkKTphZnRlciB7Cgljb250ZW50OiAnLCAnOwp9CgoKLyogQ2hpbGQgYXR0YWNobWVudHMgKi8KaDMuYXR0YWNobWVudHMgewoJZm9udC1zaXplOiAxLjFlbTsKfQoKdWwuYXR0YWNobWVudHMgbGkgewoJcGFkZGluZy10b3A6IC41ZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHsKCW1hcmdpbi1sZWZ0OiAyZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHA6Zmlyc3QtY2hpbGQgewoJbWFyZ2luLXRvcDogLjc1ZW07Cn0KCmRpdiB0YWJsZSB7Cglib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOwp9CgpkaXYgdGFibGUgdGQsIGRpdiB0YWJsZSB0aCB7Cglib3JkZXI6IDFweCAjY2NjIHNvbGlkOwoJYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsKCXdvcmQtYnJlYWs6IGJyZWFrLWFsbDsKfQoKZGl2IHRhYmxlIHRkIHA6ZW1wdHk6OmFmdGVyLCBkaXYgdGFibGUgdGggcDplbXB0eTo6YWZ0ZXIgewoJY29udGVudDogIlwwMGEwIjsKfQoKZGl2IHRhYmxlIHRkICo6Zmlyc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmZpcnN0LWNoaWxkIHsKCW1hcmdpbi10b3A6IDA7Cn0KCmRpdiB0YWJsZSB0ZCAqOmxhc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmxhc3QtY2hpbGQgewoJbWFyZ2luLWJvdHRvbTogMDsKfQo="/>
+		<link rel="stylesheet" type="text/css" media="screen,projection" href="data:text/css;base64,LyogR2VuZXJpYyBzdHlsZXMgKi8KYm9keSB7Cglmb250OiA2Mi41JSBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cgl3aWR0aDogNzgwcHg7CgltYXJnaW46IDAgYXV0bzsKfQoKaDIgewoJZm9udC1zaXplOiAxLjVlbTsKCWxpbmUtaGVpZ2h0OiAxLjVlbTsKCWZvbnQtZmFtaWx5OiBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cn0KCnAgewoJbGluZS1oZWlnaHQ6IDEuNWVtOwp9CgphOmFueS1saW5rIHsKCWNvbG9yOiAjOTAwOwp9CgphOmhvdmVyLCBhOmFjdGl2ZSB7Cgljb2xvcjogIzc3NzsKfQoKQG1lZGlhIChwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykgewoJYTphbnktbGluayB7CgkJY29sb3I6ICNmMDA7Cgl9CgoJYTpob3ZlciwgYTphY3RpdmUgewoJCWNvbG9yOiAjOTk5OwoJfQp9CgoKdWwucmVwb3J0IHsKCWZvbnQtc2l6ZTogMS40ZW07Cgl3aWR0aDogNjgwcHg7CgltYXJnaW46IDAgYXV0bzsKCXBhZGRpbmc6IDIwcHggMjBweDsKfQoKLyogTWV0YWRhdGEgdGFibGUgKi8KdGFibGUgewoJYm9yZGVyOiAxcHggI2NjYyBzb2xpZDsKCW92ZXJmbG93OiBhdXRvOwoJd2lkdGg6IDEwMCU7CgltYXJnaW46IC4xZW0gYXV0byAuNzVlbTsKCXBhZGRpbmc6IDAuNWVtOwp9Cg=="/>
+		<link rel="stylesheet" type="text/css" media="print" href="data:text/css;base64,Ym9keSB7Cglmb250OiAxMnB0ICJUaW1lcyBOZXcgUm9tYW4iLCBUaW1lcywgR2VvcmdpYSwgc2VyaWY7CgltYXJnaW46IDA7Cgl3aWR0aDogYXV0bzsKfQoKLyogUGFnZSBCcmVha3MgKHBhZ2UtYnJlYWstaW5zaWRlIG9ubHkgcmVjb2duaXplZCBieSBPcGVyYSkgKi8KaDEsIGgyLCBoMywgaDQsIGg1LCBoNiB7CglwYWdlLWJyZWFrLWFmdGVyOiBhdm9pZDsKCXBhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZDsKfQoKdWwsIG9sLCBkbCB7CglwYWdlLWJyZWFrLWluc2lkZTogYXZvaWQ7Cgljb2xvci1hZGp1c3Q6IGV4YWN0Owp9CgpoMiB7Cglmb250LXNpemU6IDEuM2VtOwoJbGluZS1oZWlnaHQ6IDEuM2VtOwp9CgphIHsKCWNvbG9yOiBpbmhlcml0OwoJdGV4dC1kZWNvcmF0aW9uOiBub25lOwp9Cg=="/>
+	</head>
+	<body>
+		<ul class="report combineChildItems">
+			<li id="item_QJ47YFZD" class="item journalArticle">
+			<h2>Betwixt and Between: Trauma, Survival and the Aboriginal Troopers of the Queensland Native Mounted Police</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Heather Burke</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Bryce Barker</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Lynley Wallis</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Sarah Craig</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Michelle Combo</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Much has been written about the history of the Queensland Native Mounted Police, mostly focussing on its development, its white officers, how much the Colonial Government genuinely knew about the actions of the Force, and how many people were killed during the frontier wars. Far less attention has been given to the Aboriginal men of the force, the nature of their recruitment, and the long-term traumatic impacts on Aboriginal peoples&apos; and communities&apos; psyches rather than broadscale changes to Aboriginal culture per se. This article examines the historical and ongoing psychological impacts of dispossession and frontier violence on Aboriginal people. Specifically, we argue that massacres, frontier violence, displacement, and the ultimate dispossession of land and destruction of traditional cultural practices resulted in both individual and collective inter-generational trauma for Aboriginal peoples. We posit that, despite the Australian frontier wars taking place over a century ago, their impacts continue to reverberate today in a range of different ways, many of which are as yet only partially understood.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2020</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Betwixt and Between</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Abingdon
+Publisher: Routledge</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>22</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>317–333</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Journal of genocide research</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/14623528.2020.1735147">10.1080/14623528.2020.1735147</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1462-3528</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>5/14/2025, 9:11:21 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>5/14/2025, 9:11:21 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Australia</li>
+					<li>Colonies</li>
+					<li>Indigenous peoples</li>
+					<li>Aboriginal Australians</li>
+					<li>Police</li>
+					<li>Massacres</li>
+					<li>Men</li>
+					<li>Mounted police</li>
+					<li>Psychic trauma</li>
+					<li>Social change</li>
+					<li>Violence</li>
+					<li>Wounds and injuries</li>
+				</ul>
+			</li>
+
+
+			<li id="item_WQB9BHP7" class="item journalArticle">
+			<h2>The shape of absence: Community Archaeology and the heritage of the Queensland Native Mounted Police, Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Heather Burke</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Lynley A. Wallis</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Iain Davidson</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Noelene Cole</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Bryce Barker</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Elizabeth Hatte</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This paper explores the notion of absence as a key, but elusive, element in the contemporary recognition, perception and reception of Australian frontier conflict. It derives from a four-year-long community archaeology project to document the lives and legacies of a devastating frontier paramilitary policing force - the Queensland Native Mounted Police (NMP). The sources of absence in the heritage of the NMP are complex, deriving from silences in historical records, the partial nature of archaeological data, and the vicissitudes of memory work. We offer an introductory taxonomy for the kinds of absence that characterize the NMP and use this to consider the potency of absence in theorizing, reconstructing, defending and interpreting the heritage of Australian frontier conflict.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2022</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>The shape of absence</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Routledge</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>9</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>120–133</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Journal of community archaeology &amp; heritage</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/20518196.2021.1996155">10.1080/20518196.2021.1996155</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>2</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2051-8196</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>5/14/2025, 9:11:46 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>5/14/2025, 9:11:46 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Interpretation</li>
+				</ul>
+			</li>
+
+
+			<li id="item_WIILLHBK" class="item journalArticle">
+			<h2>The Discipline of Dress: Uniform Buttons and Accoutrements of the Native Mounted Police in Queensland, Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Nic Grguric</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Heather Burke</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Lynley A. Wallis</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Noelene Cole</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Bryce Barker</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Elizabeth Hatte</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Clothing is capable of providing a range of insights into aspects of identity, authority, power, and hierarchy. Here we present the results of an analysis of an assemblage of uniform buttons and accoutrements from seven 19th-century Native Mounted Police (NMP) camps in Queensland, Australia. As part of wider colonial structures of discipline and expropriation, the NMP uniform was a powerful symbol of control: over troopers’ bodies, over NMP detachments by officers, and over “wild” and “savage” Indigenous peoples by the NMP. Exploring the history and development of the NMP uniform, its intent in constructing officers and particularly troopers, the indexical qualities it acquired as a symbol of violence and fear amongst Indigenous people, and some of the alternative ways in which uniforms could be worn provides a variety of insights into the role, nature, and experience of the Queensland NMP.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2023</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>The Discipline of Dress</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Cham
+Publisher: Springer International Publishing</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>57</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>703–726</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Historical archaeology</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1007/s41636-023-00405-3">10.1007/s41636-023-00405-3</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>2</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0440-9213</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>5/14/2025, 9:12:17 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>5/14/2025, 9:12:17 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Social sciences</li>
+					<li>Indigenous peoples</li>
+					<li>19th century</li>
+					<li>Police</li>
+					<li>Archaeology</li>
+					<li>Camps</li>
+					<li>Eminent domain</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_RTW3PRFG">Full Text					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_TM37I4KG" class="item book">
+			<h2>The secret war: a true history of Queensland&apos;s native police</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Book</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Jonathan Richards</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>&quot;An archived-based overview of the Native Police Force in Queensland between 1860-1910 showing governmental approval of violence against Indigenous people.&quot; -- Provided by publisher.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2008</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>The secret war</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Call Number</th>
+						<td>363.209943 R516s</td>
+					</tr>
+					<tr>
+					<th>Place</th>
+						<td>St Lucia, Qld</td>
+					</tr>
+					<tr>
+					<th>Publisher</th>
+						<td>University of Queensland Press</td>
+					</tr>
+					<tr>
+					<th># of Pages</th>
+						<td>308</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>5/14/2025, 9:10:01 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>5/14/2025, 9:10:01 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>History</li>
+					<li>Queensland</li>
+					<li>Aboriginal Australians</li>
+					<li>Treatment</li>
+					<li>Aboriginal Australian police</li>
+					<li>Police</li>
+					<li>Police brutality</li>
+					<li>Queensland Native Police Force</li>
+				</ul>
+			</li>
+
+
+			<li id="item_PUP3RI6J" class="item book">
+			<h2>Up rode the troopers: the black police in Queensland</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Book</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Bill Rosser</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1990</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Up rode the troopers</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Call Number</th>
+						<td>363.209943 R828u</td>
+					</tr>
+					<tr>
+					<th>Place</th>
+						<td>St. Lucia, Qld</td>
+					</tr>
+					<tr>
+					<th>Publisher</th>
+						<td>University of Queensland Press</td>
+					</tr>
+					<tr>
+					<th>ISBN</th>
+						<td>978-0-7022-2224-5</td>
+					</tr>
+					<tr>
+					<th># of Pages</th>
+						<td>211</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>5/14/2025, 9:10:13 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>5/14/2025, 9:10:13 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>History</li>
+					<li>Queensland</li>
+					<li>Aboriginal Australians</li>
+					<li>Aboriginal Australian police</li>
+					<li>Police</li>
+					<li>Queensland Native Police Force</li>
+					<li>Government relations</li>
+				</ul>
+			</li>
+
+
+			<li id="item_7QZHATXG" class="item book">
+			<h2>Police of the pastoral frontier: native police, 1849-59</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Book</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Leslie Edward Skinner</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1975</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Police of the pastoral frontier</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Call Number</th>
+						<td>363.20994 S628p</td>
+					</tr>
+					<tr>
+					<th>Place</th>
+						<td>St. Lucia, Qld</td>
+					</tr>
+					<tr>
+					<th>Publisher</th>
+						<td>University of Queensland Press</td>
+					</tr>
+					<tr>
+					<th>ISBN</th>
+						<td>978-0-7022-0977-2</td>
+					</tr>
+					<tr>
+					<th># of Pages</th>
+						<td>455</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>5/14/2025, 9:10:31 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>5/14/2025, 9:10:31 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>History</li>
+					<li>Australia</li>
+					<li>Aboriginal Australian police</li>
+					<li>Police, Rural</li>
+				</ul>
+			</li>
+
+
+			<li id="item_88VX7RD3" class="item journalArticle">
+			<h2>A Comprehensive Online Database about the Native Mounted Police and Frontier Conflict in Queensland</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Lynley A. Wallis</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Heather Burke</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Mia Dardengo</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>In recent years the publication of online maps documenting frontier conflict between Indigenous peoples and interlopers in Australia has generated great public interest. These new resources are vital memorials to frontier conflict; however, we note they are still relatively &quot;flat&quot; resources, much more akin to visualized spreadsheets with a spatial element. Another new resource, the Frontier Conflict and the Native Mounted Police Database is a comprehensive relational database that comprehensively presents all elements of frontier conflict across the state of Queensland. It collates transcribed primary documents, georectified historical mapping data, and oral histories with archaeological site and artefact level data, and links these multi-tiered sets of information to the known structure, spread, and personnel of the paramilitary government agency, the Native Mounted Police. Rather than a single map being the main outcome, the Frontier Conflict and the Native Mounted Police Database uses the range of primary data to generate a comprehensive series of interactive maps, including layers relating to key historical data sets, as well as making the mass of primary and secondary data upon which the maps are based accessible to the user. In this Reflection, we describe the extent and limitations of the Frontier Conflict and the Native Mounted Police Database, and compare it with other online datasets. In collating frontier conflict relating to Queensland in a single, freely available online resource, we invite the public to actively engage in &quot;truth-telling,&quot; by assessing historical evidence for themselves, developing their critical thinking skills, and drawing their own conclusions about the nature and extent of frontier conflict.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2022</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Abingdon
+Publisher: Routledge</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>24</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>402–418</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Journal of genocide research</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/14623528.2020.1862489">10.1080/14623528.2020.1862489</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1462-3528</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>5/14/2025, 9:13:04 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>5/14/2025, 9:13:04 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Internet</li>
+					<li>Australia</li>
+					<li>Indigenous peoples</li>
+					<li>Aboriginal Australians</li>
+					<li>Police</li>
+					<li>Mounted police</li>
+					<li>Administrative agencies</li>
+					<li>Archaeological sites</li>
+					<li>Critical thinking</li>
+					<li>Memorials</li>
+					<li>Public interest</li>
+					<li>Truth</li>
+				</ul>
+			</li>
+
+		</ul>
+	</body>
+</html>

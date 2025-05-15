@@ -1,0 +1,2661 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline' data:" />
+		<title>Zotero Report</title>
+		<link rel="stylesheet" type="text/css" href="data:text/css;base64,Ym9keSB7Cgljb2xvci1zY2hlbWU6IGxpZ2h0IGRhcms7CgkvKiBUaGVzZSBzaG91bGQgYmUgdGhlIGRlZmF1bHRzLCBidXQganVzdCBpbiBjYXNlOiAqLwoJYmFja2dyb3VuZDogQ2FudmFzOwoJY29sb3I6IENhbnZhc1RleHQ7Cn0KCmEgewoJdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7Cn0KCmJvZHkgewoJcGFkZGluZzogMDsKfQoKdWwucmVwb3J0IGxpLml0ZW0gewoJYm9yZGVyLXRvcDogNHB4IHNvbGlkICM1NTU7CglwYWRkaW5nLXRvcDogMWVtOwoJcGFkZGluZy1sZWZ0OiAxZW07CglwYWRkaW5nLXJpZ2h0OiAxZW07CgltYXJnaW4tYm90dG9tOiAyZW07Cn0KCmgxLCBoMiwgaDMsIGg0LCBoNSwgaDYgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDIgewoJbWFyZ2luOiAwIDAgLjVlbTsKfQoKaDIucGFyZW50SXRlbSB7Cglmb250LXdlaWdodDogNjAwOwoJZm9udC1zaXplOiAxZW07CglwYWRkaW5nOiAwIDAgLjVlbTsKCWJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2NjOwp9CgovKiBJZiBjb21iaW5pbmcgY2hpbGRyZW4sIGRpc3BsYXkgcGFyZW50IHNsaWdodGx5IGxhcmdlciAqLwp1bC5yZXBvcnQuY29tYmluZUNoaWxkSXRlbXMgaDIucGFyZW50SXRlbSB7Cglmb250LXNpemU6IDEuMWVtOwoJcGFkZGluZy1ib3R0b206IC43NWVtOwoJbWFyZ2luLWJvdHRvbTogLjRlbTsKfQoKaDIucGFyZW50SXRlbSAudGl0bGUgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDMgewoJbWFyZ2luLWJvdHRvbTogLjZlbTsKCWZvbnQtd2VpZ2h0OiA2MDAgIWltcG9ydGFudDsKCWZvbnQtc2l6ZTogMWVtOwoJZGlzcGxheTogYmxvY2s7Cn0KCi8qIE1ldGFkYXRhIHRhYmxlICovCnRoIHsKCXZlcnRpY2FsLWFsaWduOiB0b3A7Cgl0ZXh0LWFsaWduOiByaWdodDsKCXdpZHRoOiAxNSU7Cgl3aGl0ZS1zcGFjZTogbm93cmFwOwp9Cgp0ZCB7CglwYWRkaW5nLWxlZnQ6IC41ZW07Cn0KCgp1bC5yZXBvcnQsIHVsLm5vdGVzLCB1bC50YWdzIHsKCWxpc3Qtc3R5bGU6IG5vbmU7CgltYXJnaW4tbGVmdDogMDsKCXBhZGRpbmctbGVmdDogMDsKfQoKLyogVGFncyAqLwpoMy50YWdzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLnRhZ3MgewoJbGluZS1oZWlnaHQ6IDEuNzVlbTsKCWxpc3Qtc3R5bGU6IG5vbmU7Cn0KCnVsLnRhZ3MgbGkgewoJZGlzcGxheTogaW5saW5lOwp9Cgp1bC50YWdzIGxpOm5vdCg6bGFzdC1jaGlsZCk6YWZ0ZXIgewoJY29udGVudDogJywgJzsKfQoKCi8qIENoaWxkIG5vdGVzICovCmgzLm5vdGVzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLm5vdGVzIHsKCW1hcmdpbi1ib3R0b206IDEuMmVtOwp9Cgp1bC5ub3RlcyA+IGxpOmZpcnN0LWNoaWxkIHAgewoJbWFyZ2luLXRvcDogMDsKfQoKdWwubm90ZXMgPiBsaSB7CglwYWRkaW5nOiAuN2VtIDA7Cn0KCnVsLm5vdGVzID4gbGk6bm90KDpsYXN0LWNoaWxkKSB7Cglib3JkZXItYm90dG9tOiAxcHggI2NjYyBzb2xpZDsKfQoKCnVsLm5vdGVzID4gbGkgcDpmaXJzdC1jaGlsZCB7CgltYXJnaW4tdG9wOiAwOwp9Cgp1bC5ub3RlcyA+IGxpIHA6bGFzdC1jaGlsZCB7CgltYXJnaW4tYm90dG9tOiAwOwp9CgovKiBBZGQgcXVvdGF0aW9uIG1hcmtzIGFyb3VuZCBibG9ja3F1b3RlICovCnVsLm5vdGVzID4gbGkgYmxvY2txdW90ZSBwOm5vdCg6ZW1wdHkpOmJlZm9yZSwKbGkubm90ZSBibG9ja3F1b3RlIHA6bm90KDplbXB0eSk6YmVmb3JlIHsKCWNvbnRlbnQ6ICfigJwnOwp9Cgp1bC5ub3RlcyA+IGxpIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyLApsaS5ub3RlIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyIHsKCWNvbnRlbnQ6ICfigJ0nOwp9CgovKiBQcmVzZXJ2ZSB3aGl0ZXNwYWNlIG9uIHBsYWludGV4dCBub3RlcyAqLwp1bC5ub3RlcyBsaSBwLnBsYWludGV4dCwgbGkubm90ZSBwLnBsYWludGV4dCwgZGl2Lm5vdGUgcC5wbGFpbnRleHQgewoJd2hpdGUtc3BhY2U6IHByZS13cmFwOwp9CgovKiBEaXNwbGF5IHRhZ3Mgd2l0aGluIGNoaWxkIG5vdGVzIGlubGluZSAqLwp1bC5ub3RlcyBoMy50YWdzIHsKCWRpc3BsYXk6IGlubGluZTsKCWZvbnQtc2l6ZTogMWVtOwp9Cgp1bC5ub3RlcyBoMy50YWdzOmFmdGVyIHsKCWNvbnRlbnQ6ICcgJzsKfQoKdWwubm90ZXMgdWwudGFncyB7CglkaXNwbGF5OiBpbmxpbmU7Cn0KCnVsLm5vdGVzIHVsLnRhZ3MgbGk6bm90KDpsYXN0LWNoaWxkKTphZnRlciB7Cgljb250ZW50OiAnLCAnOwp9CgoKLyogQ2hpbGQgYXR0YWNobWVudHMgKi8KaDMuYXR0YWNobWVudHMgewoJZm9udC1zaXplOiAxLjFlbTsKfQoKdWwuYXR0YWNobWVudHMgbGkgewoJcGFkZGluZy10b3A6IC41ZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHsKCW1hcmdpbi1sZWZ0OiAyZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHA6Zmlyc3QtY2hpbGQgewoJbWFyZ2luLXRvcDogLjc1ZW07Cn0KCmRpdiB0YWJsZSB7Cglib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOwp9CgpkaXYgdGFibGUgdGQsIGRpdiB0YWJsZSB0aCB7Cglib3JkZXI6IDFweCAjY2NjIHNvbGlkOwoJYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsKCXdvcmQtYnJlYWs6IGJyZWFrLWFsbDsKfQoKZGl2IHRhYmxlIHRkIHA6ZW1wdHk6OmFmdGVyLCBkaXYgdGFibGUgdGggcDplbXB0eTo6YWZ0ZXIgewoJY29udGVudDogIlwwMGEwIjsKfQoKZGl2IHRhYmxlIHRkICo6Zmlyc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmZpcnN0LWNoaWxkIHsKCW1hcmdpbi10b3A6IDA7Cn0KCmRpdiB0YWJsZSB0ZCAqOmxhc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmxhc3QtY2hpbGQgewoJbWFyZ2luLWJvdHRvbTogMDsKfQo="/>
+		<link rel="stylesheet" type="text/css" media="screen,projection" href="data:text/css;base64,LyogR2VuZXJpYyBzdHlsZXMgKi8KYm9keSB7Cglmb250OiA2Mi41JSBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cgl3aWR0aDogNzgwcHg7CgltYXJnaW46IDAgYXV0bzsKfQoKaDIgewoJZm9udC1zaXplOiAxLjVlbTsKCWxpbmUtaGVpZ2h0OiAxLjVlbTsKCWZvbnQtZmFtaWx5OiBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cn0KCnAgewoJbGluZS1oZWlnaHQ6IDEuNWVtOwp9CgphOmFueS1saW5rIHsKCWNvbG9yOiAjOTAwOwp9CgphOmhvdmVyLCBhOmFjdGl2ZSB7Cgljb2xvcjogIzc3NzsKfQoKQG1lZGlhIChwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykgewoJYTphbnktbGluayB7CgkJY29sb3I6ICNmMDA7Cgl9CgoJYTpob3ZlciwgYTphY3RpdmUgewoJCWNvbG9yOiAjOTk5OwoJfQp9CgoKdWwucmVwb3J0IHsKCWZvbnQtc2l6ZTogMS40ZW07Cgl3aWR0aDogNjgwcHg7CgltYXJnaW46IDAgYXV0bzsKCXBhZGRpbmc6IDIwcHggMjBweDsKfQoKLyogTWV0YWRhdGEgdGFibGUgKi8KdGFibGUgewoJYm9yZGVyOiAxcHggI2NjYyBzb2xpZDsKCW92ZXJmbG93OiBhdXRvOwoJd2lkdGg6IDEwMCU7CgltYXJnaW46IC4xZW0gYXV0byAuNzVlbTsKCXBhZGRpbmc6IDAuNWVtOwp9Cg=="/>
+		<link rel="stylesheet" type="text/css" media="print" href="data:text/css;base64,Ym9keSB7Cglmb250OiAxMnB0ICJUaW1lcyBOZXcgUm9tYW4iLCBUaW1lcywgR2VvcmdpYSwgc2VyaWY7CgltYXJnaW46IDA7Cgl3aWR0aDogYXV0bzsKfQoKLyogUGFnZSBCcmVha3MgKHBhZ2UtYnJlYWstaW5zaWRlIG9ubHkgcmVjb2duaXplZCBieSBPcGVyYSkgKi8KaDEsIGgyLCBoMywgaDQsIGg1LCBoNiB7CglwYWdlLWJyZWFrLWFmdGVyOiBhdm9pZDsKCXBhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZDsKfQoKdWwsIG9sLCBkbCB7CglwYWdlLWJyZWFrLWluc2lkZTogYXZvaWQ7Cgljb2xvci1hZGp1c3Q6IGV4YWN0Owp9CgpoMiB7Cglmb250LXNpemU6IDEuM2VtOwoJbGluZS1oZWlnaHQ6IDEuM2VtOwp9CgphIHsKCWNvbG9yOiBpbmhlcml0OwoJdGV4dC1kZWNvcmF0aW9uOiBub25lOwp9Cg=="/>
+	</head>
+	<body>
+		<ul class="report combineChildItems">
+			<li id="item_CAY2BQSQ" class="item manuscript">
+			<h2>Registers of immigrants per ship landed at Immigration Depot at Townsville</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Manuscript</td>
+					</tr>
+					<tr>
+						<th class="contributor">Contributor</th>
+						<td>A1514, Immigration Department</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1882/1884</td>
+					</tr>
+					<tr>
+					<th>Archive</th>
+						<td>Queensland State Archives</td>
+					</tr>
+					<tr>
+					<th>Loc. in Archive</th>
+						<td>ITM18469</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>Queensland State Archives</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.archivessearch.qld.gov.au/items/ITM18469">https://www.archivessearch.qld.gov.au/items/ITM18469</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/12/2025, 5:10:03 PM</td>
+					</tr>
+					<tr>
+					<th>Rights</th>
+						<td>Copyright State of Queensland</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Archive Collection: S13083, Registers of Immigrants Per Ship Landed at Immigration Depot at Townsville</td>
+					</tr>
+					<tr>
+					<th>Type</th>
+						<td>Register - immigrants</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/12/2025, 5:10:05 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/12/2025, 5:26:36 PM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_ML3HNPLK">PDF DR45623					</li>
+					<li id="item_HM4P3XK8">PDF DR45624					</li>
+					<li id="item_SL4QU9A9">PDF DR45625					</li>
+					<li id="item_RUC8B5E2">PDF DR45626					</li>
+					<li id="item_EMDL7785">PDF DR45627					</li>
+					<li id="item_22I3UX5K">PDF DR45628					</li>
+					<li id="item_KRURIYVI">PDF DR45629					</li>
+					<li id="item_QWL88VRA">PDF DR85887					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_JAEFYA88" class="item manuscript">
+			<h2>Registers of immigrants per ship landed at Immigration Depot at Townsville</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Manuscript</td>
+					</tr>
+					<tr>
+						<th class="contributor">Contributor</th>
+						<td>A1514, Immigration Department</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1885/1887</td>
+					</tr>
+					<tr>
+					<th>Archive</th>
+						<td>Queensland State Archives</td>
+					</tr>
+					<tr>
+					<th>Loc. in Archive</th>
+						<td>ITM18470</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>Queensland State Archives</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.archivessearch.qld.gov.au/items/ITM18470">https://www.archivessearch.qld.gov.au/items/ITM18470</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/12/2025, 5:10:04 PM</td>
+					</tr>
+					<tr>
+					<th>Rights</th>
+						<td>Copyright State of Queensland</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Archive Collection: S13083, Registers of Immigrants Per Ship Landed at Immigration Depot at Townsville</td>
+					</tr>
+					<tr>
+					<th>Type</th>
+						<td>Register - immigrants</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/12/2025, 5:10:05 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/12/2025, 5:26:36 PM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_3SWVYED6">PDF DR37842					</li>
+					<li id="item_9Q32Y6PF">PDF DR37975					</li>
+					<li id="item_E7XBHY62">PDF DR38042					</li>
+					<li id="item_9S7KZ24U">PDF DR38074					</li>
+					<li id="item_SXL2WPT7">PDF DR38132					</li>
+					<li id="item_N7HRK2FX">PDF DR38198					</li>
+					<li id="item_ZDSNMEHK">PDF DR38224					</li>
+					<li id="item_4TV7TNHK">PDF DR38253					</li>
+					<li id="item_V6AK8YVY">PDF DR38268					</li>
+					<li id="item_Q5PMLIX5">PDF DR38326					</li>
+					<li id="item_6KL4GE9I">PDF DR38352					</li>
+					<li id="item_RG6KHHD3">PDF DR38503					</li>
+					<li id="item_NHZUVN9H">PDF DR38540					</li>
+					<li id="item_Z6VZ3VNI">PDF DR38673					</li>
+					<li id="item_3L9A2TTF">PDF DR38778					</li>
+					<li id="item_MH2F5MXY">PDF DR38850					</li>
+					<li id="item_2KHUF2X6">PDF DR38929					</li>
+					<li id="item_TRZLED5C">PDF DR39205					</li>
+					<li id="item_KNW3DDFP">PDF DR39323					</li>
+					<li id="item_42V6NW9R">PDF DR39540					</li>
+					<li id="item_PADY29EZ">PDF DR39620					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_KQSNIC4K" class="item manuscript">
+			<h2>Registers of immigrants per ship landed at Immigration Depot at Townsville</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Manuscript</td>
+					</tr>
+					<tr>
+						<th class="contributor">Contributor</th>
+						<td>A1514, Immigration Department</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1909/1915</td>
+					</tr>
+					<tr>
+					<th>Archive</th>
+						<td>Queensland State Archives</td>
+					</tr>
+					<tr>
+					<th>Loc. in Archive</th>
+						<td>ITM18471</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>Queensland State Archives</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.archivessearch.qld.gov.au/items/ITM18471">https://www.archivessearch.qld.gov.au/items/ITM18471</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/12/2025, 5:10:05 PM</td>
+					</tr>
+					<tr>
+					<th>Rights</th>
+						<td>Copyright State of Queensland</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Archive Collection: S13083, Registers of Immigrants Per Ship Landed at Immigration Depot at Townsville</td>
+					</tr>
+					<tr>
+					<th>Type</th>
+						<td>Register - immigrants</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/12/2025, 5:10:05 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/12/2025, 5:26:36 PM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_LRHG9ELJ">PDF DR37909					</li>
+					<li id="item_WK5EHH6M">PDF DR37993					</li>
+					<li id="item_EUQCFMLH">PDF DR38007					</li>
+					<li id="item_9BXJNH8X">PDF DR38708					</li>
+					<li id="item_MPZ22QYB">PDF DR38770					</li>
+					<li id="item_U4K22NZM">PDF DR38937					</li>
+					<li id="item_Q7CFU6A8">PDF DR39105					</li>
+					<li id="item_F95TX7AP">PDF DR39139					</li>
+					<li id="item_EYRVZG5K">PDF DR39164					</li>
+					<li id="item_WDKS52F8">PDF DR39257					</li>
+					<li id="item_MQAFLF5F">PDF DR39269					</li>
+					<li id="item_H4FMSGZG">PDF DR39280					</li>
+					<li id="item_4IYAQRHQ">PDF DR39428					</li>
+					<li id="item_ZJJ4GS7Q">PDF DR39483					</li>
+					<li id="item_88BVJ6NF">PDF DR39592					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_7835WW6R" class="item journalArticle">
+			<h2>Great expectations: efforts to entice women to Queensland from 1860 to 1900</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Alana Piper</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2008</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Great expectations</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>20</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>370–390</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Queensland history journal</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1836-5477</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 4:21:56 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 4:21:56 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Colonies</li>
+					<li>Women</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_KXZ8HSFJ">Alana Piper - 2008 - Great expectations efforts to entice women to Queensland from 1860 to 1900.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_9NQI9WYY" class="item journalArticle">
+			<h2>Shadow Letters and the &apos;Karnana&apos; Letter: Indians Negotiate the White Australia Policy, 1901-21</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Margaret Allen</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>The Immigration Restriction Act of 1901 established the White Australia policy. It was intended to establish Australia as a white nation and to exclude people described, as &apos;aboriginal natives of Asia, Africa and the Pacific&apos;. There were however around 50,000 of these people, now deemed as undesirable, in the country. Many of these were sojourners, who would return to their home countries, generally China and India from time to time. This paper will consider a series of letters from former residents who had been denied re-entry to Australia in the first years of the policy and who subsequently sought to claim re-entry. Many of these men were illiterate in English and sometimes in their own languages. Their letters show them seeking to legitimate their claims by developing semi-official letter forms-which I term &apos;the Karnana letter&apos;.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2011</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Shadow Letters and the &apos;Karnana&apos; Letter</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Taylor &amp; Francis Group</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>187–202</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Life writing</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/14484528.2011.559735">10.1080/14484528.2011.559735</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>2</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1448-4528</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/3/2025, 8:27:27 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/3/2025, 8:27:27 AM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>White Australia policy</li>
+					<li>Correspondence</li>
+					<li>Indians</li>
+					<li>Letters</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_5WGIQBXB">Allen - 2011 - Shadow Letters and the &apos;Karnana&apos; Letter Indians Negotiate the White Australia Policy, 1901-21.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_IRVWJ3ZR" class="item journalArticle">
+			<h2>Olive or white? The colour of Italians in Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Helen Andreoni</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2003</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Olive or white?</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>ISBN: 9780702234187
+Publisher: Taylor &amp; Francis Group</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>27</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>81–92</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Journal of Australian studies</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/14443050309387853">10.1080/14443050309387853</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>77</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1444-3058</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/3/2025, 8:26:32 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/3/2025, 8:26:32 AM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Immigrants</li>
+					<li>Migrant agricultural laborers</li>
+					<li>Italians</li>
+					<li>Race discrimination</li>
+					<li>White Australia policy</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_TU5NGR7E">Andreoni - 2003 - Olive or white The colour of Italians in Australia.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_6LHMHLS2" class="item webpage">
+			<h2>Australian Bureau of Statistics</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Web Page</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Australian Bureau of Statistics</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This is a summary from publication No Subject or Description which contains key figures, key points and notes from the publication.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1851 - 2021</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.abs.gov.au/AUSSTATS/abs@.nsf/viewcontent?readform&amp;view=ProductsbyReleaseDate&amp;Action=expandview">https://www.abs.gov.au/AUSSTATS/abs@.nsf/viewcontent?readform&amp;view=ProductsbyReleaseDate&amp;Action=expandview</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/9/2025, 11:17:06 AM</td>
+					</tr>
+					<tr>
+					<th>Rights</th>
+						<td>© Commonwealth of Australia, 2025</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: c=AU; o=Commonwealth of Australia; ou=Australian Bureau of Statistics</td>
+					</tr>
+					<tr>
+					<th>Website Title</th>
+						<td>A Statistical Account of the Seven Colonies of Australasia</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 11:17:06 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 11:34:48 AM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_DVSH5ZX4">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_QKVICDJ6" class="item journalArticle">
+			<h2>Histories of Migrants and Refugees in Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Ruth Balint</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Zora Simic</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This article canvasses recent scholarship on migrants and refugees in Australian history. It covers broadly three main fields of enquiry: White Australia, postwar immigration and refugees since the Vietnam War. We argue there is a new dynamism to the field while simultaneously making the case that migrant and refugee history has hitherto been largely quarantined from mainstream Australian historiography.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2018</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Abingdon
+Publisher: Routledge</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>49</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>378–409</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Australian historical studies</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/1031461X.2018.1479438">10.1080/1031461X.2018.1479438</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1031-461X</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/2/2025, 1:45:04 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/2/2025, 1:45:04 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Historiography</li>
+					<li>20th century</li>
+					<li>Refugees</li>
+					<li>White people</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_Q3J57J7H">Balint and Simic - 2018 - Histories of Migrants and Refugees in Australia.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_FJSJ8B5E" class="item journalArticle">
+			<h2>The &apos;Southern question&apos; in Australia: The 1925 Royal Commission&apos;s racialisation of Southern Italians</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Catherine Dewhirst</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Thomas Arthur Ferry (1877-1963) conducted several Royal Commissions in his role as under-secretary for Queensland&apos;s Premier and Chief Secretary&apos;s Department. His now frequently cited first Report of 1925 (the Ferry Report) remains the most controversial. He investigated settlers from European countries as diverse as Albania, Finland, Greece, Italy, Malta, Russia and Yugoslavia in various districts from Mackay to Cairns. Maltese, Greeks and Italians, notably Sicilians, featured most in the Report because of their purported larger numbers in the sugar industry. Aside from Finns, Commissioner Ferry questioned whether these &apos;races&apos; could be assimilated. Although Southern and Eastern Europeans were never denied entry into Australia on the basis of colour, the Commonwealth Government applied restrictions during the 1920s due to British preferences. Ferry was the first official figure to reframe such restrictions on racial calibre. He justified his recommendations for implementing a better migrant selection process on behavioural and moral characteristics. Where Italians were concerned, he went further to suggest that their racial fitness could also be determined by physical traits, informed by pseudo-scientific beliefs. While racialising Southern Italians, he articulated the &apos;Southern Question&apos;, but this Royal Commission was also symptomatic of systemic racism in Australia.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2014</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>The &apos;Southern question&apos; in Australia</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>22</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>316–332</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Queensland history journal</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>4</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1836-5477</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/4/2025, 7:00:38 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/4/2025, 7:00:38 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Immigrants</li>
+					<li>Constitutional law</li>
+					<li>Discrimination in employment</li>
+					<li>Economic aspects</li>
+					<li>Government policy</li>
+					<li>Law and legislation</li>
+					<li>Political aspects</li>
+					<li>Racism</li>
+					<li>Sugar</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_7EU9WIF7">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_EXGUVLEQ" class="item journalArticle">
+			<h2>Antonio Azzopardi, Australia&apos;s first Maltese immigrant: An exploration of his life and sources of information</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Charlie Farrugia</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>During 2023, I collaborated with the National Archives of Australia (NAA) to find records within Public Record Office Victoria (PROV) for an NAA function and display celebrating the seventy-fifth anniversary of the signing of the immigration agreement between Australia and Malta. The function took place at the Victorian Archives Centre on 6 May 2023 and the exhibition, titled &apos;From restricted to assisted. Minn Ristrett ghal Assistit. Maltese migration to Australia&apos;, included records I located reLating to Antonio Azzopardi, an early European settler at Port Phillip. Starting with a variety of publicly available resources, I then located a range of public records within the PROV collection that assisted in telling part of Azzopardi&apos;s story, most of which could not be included within the exhibition. This paper combines the public records I located with non-government records and secondary sources to produce a sketch of Azzopardi&apos;s life in Victoria and outline his achievements. Although not the main focus, the article also reveals in passing some of the difficulties that occurred in using some of the publicly available resources, as starting points for this research, and some of the public records, and the extent to which various claims made about Antonio&apos;s life could (and could not) be substantiated.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2024</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Antonio Azzopardi, Australia&apos;s first Maltese immigrant</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: North Melbourne, VIC
+Publisher: Public Record Office Victoria</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>66–80</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Provenance (North Melbourne, Vic.)</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>21</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1832-2522</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 12:37:22 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 12:37:22 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Immigrants</li>
+					<li>Maltese</li>
+					<li>Exhibitions</li>
+					<li>Social conditions</li>
+					<li>Social history</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_EPLHKSLL">Charlie Farrugia - 2024 - Antonio Azzopardi, Australia&apos;s first Maltese immigrant An exploration of his life and sources of in.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_PU4HB4C5" class="item book">
+			<h2>From Italy to Ingham: Italians in North Queensland</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Book</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>William A. Douglass</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1995</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>From Italy to Ingham</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Call Number</th>
+						<td>994.300451 D737f</td>
+					</tr>
+					<tr>
+					<th>Place</th>
+						<td>St Lucia, Qld</td>
+					</tr>
+					<tr>
+					<th>Publisher</th>
+						<td>University of Queensland Press</td>
+					</tr>
+					<tr>
+					<th>ISBN</th>
+						<td>978-0-7022-2635-9</td>
+					</tr>
+					<tr>
+					<th>Series</th>
+						<td>UQP studies in Australian history</td>
+					</tr>
+					<tr>
+					<th># of Pages</th>
+						<td>x+391</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/4/2025, 7:04:53 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/4/2025, 7:04:53 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>History</li>
+					<li>Queensland</li>
+					<li>Italians</li>
+					<li>Sugarcane industry</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_B235XH3D">Chapter 1 - The Australian Setting					</li>
+					<li id="item_EPJKRH9N">Chapter 2 - Queensland Beckons					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_L3IAU6K5" class="item document">
+			<h2>Report of the Royal Commission appointed to Inquire into and Report on the Social and Economic Effect of Increase in North Queensland</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Document</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>T.A. Ferry</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1925</td>
+					</tr>
+					<tr>
+					<th>Publisher</th>
+						<td>Queensland Alien Immigration Commission</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/4/2025, 7:56:43 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/4/2025, 7:57:56 PM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_HK52BTKD">Ferry - 1925 - Royal Commission on Increase of Aliens in North Queensland.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_LPNEM4Z7" class="item journalArticle">
+			<h2>You may well become slaves: on the fringes of Queensland&apos;s assisted migration scheme</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Fredrik Larsen Lund</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>In the early 1870s Queensland emerged as a potential destination for overseas emigrants from Scandinavia as this 1871 quote from the Norwegian newspaper Verdens Gang indicates: Queensland? Yes exactly. I can tell you are surprised, with a question mark on your face, as if you wanted to ask: &quot;Where is Queensland?&quot;</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2012</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>You may well become slaves</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>21</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>718–732</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Queensland history journal</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>11</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1836-5477</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 4:24:16 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 4:24:16 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Emigration and immigration</li>
+					<li>Ships</li>
+					<li>Transportation</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_VEB4HIYB">Fredrik Larsen Lund - 2012 - You may well become slaves on the fringes of Queensland&apos;s assisted migration scheme.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_6KZ82C23" class="item journalArticle">
+			<h2>&apos;Good ploughmen and useful servant girls&apos;: immigration to pre-Separation Moreton Bay</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Jennifer Harrison</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2009-08-01</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>&apos;Good ploughmen and useful servant girls&apos;</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>EBSCOhost</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>20</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>536-543</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Queensland History Journal</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>11</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1836-5477</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 4:15:01 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 4:15:08 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Colonialism</li>
+					<li>Immigration</li>
+					<li>Moreton Bay</li>
+					<li>Pioneer settlement</li>
+					<li>Queensland: History</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_N5IP49QX">Harrison - 2009 - &apos;Good ploughmen and useful servant girls&apos; immigration to pre-Separation Moreton Bay.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_YHU9Q2KD" class="item journalArticle">
+			<h2>The political economy of assisted immigration: Australia 1860–1913</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Timothy J. Hatton</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>From 1860 to 1913 the six colonies that became states of Australia strove to attract migrants from the UK with a variety of assisted passages. The colonies/states shared a common culture and sought migrants from a common source, the UK, but set policy independently of each other. This experience provides a unique opportunity to examine the formation of assisted immigration policies. Using a panel of colonies/states over the years 1862 to 1913 I investigate the association between measures of policy activism and a range of economic and political variables. Assisted migration policies were positively linked with government budget surpluses and local economic prosperity. They were also associated with political participation including the widening of the franchise and remuneration of members of parliament. While the reduction in travel time to Australia reduced the need for assisted migration, slumps in the UK increased the take-up of assisted passages.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2024</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>The political economy of assisted immigration</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Elsevier Inc</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>92</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>101565-</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Explorations in economic history</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1016/j.eeh.2023.101565">10.1016/j.eeh.2023.101565</a></td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0014-4983</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/2/2025, 3:15:19 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/2/2025, 3:15:19 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Emigration and immigration</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_Q3S6H5Y8">Hatton - 2024 - The political economy of assisted immigration Australia 1860–1913.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_XHMQBPEJ" class="item journalArticle">
+			<h2>Beyond whiteness: violence and belonging in the borderlands of North Queensland</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Maria Elena Indelicato</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Deﬁned as ‘borderlands’ by Tracey Banivanua-Mar, the sugar towns of North Queensland in the late nineteenth and early twentieth centuries were populated with a great variety of non-white ethnic minorities: Chinese, Indian, Japanese, ‘Malay’, Paciﬁc Islander and later southern European. Instances of violence between these population groups have been recounted as if they were detached from the socio-historical conditions dictated by settler colonialism. Against this stance, this article examines the case of three South Sea Islanders attacking an Italian farmer in the city of Ingham in 1927. As the motive behind the incident remains unknown, the incident is recounted through the individual histories of those who were involved and against the wider context of anti-Italian migration sentiment. In doing this, this article demonstrates how these histories of presence in Ingham challenge the discursive rendition of the assault as a random act of violence and, accordingly, throw into sharp relief who could be counted as a permanent part of the Australian population. This article concludes by pointing to the necessity of examining similar instances of violence by setting them against migrants’ implication in the subjection of ‘natives’ and South Sea Islanders to the project of European replacement. When this implication is considered, violence can be theorised as much as a means that migrants, such as Italians, use to claim belonging as a technology settlers employ to manage ‘undesired’ populations.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2020-01-02</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Beyond whiteness</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>DOI.org (Crossref)</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.tandfonline.com/doi/full/10.1080/13688790.2020.1725222">https://www.tandfonline.com/doi/full/10.1080/13688790.2020.1725222</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/1/2025, 4:05:21 PM</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>23</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>99-115</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Postcolonial Studies</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/13688790.2020.1725222">10.1080/13688790.2020.1725222</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>Postcolonial Studies</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1368-8790, 1466-1888</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/1/2025, 4:05:21 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/1/2025, 4:05:21 PM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_DFNIKZKX">Indelicato - 2020 - Beyond whiteness violence and belonging in the borderlands of North Queensland.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_LPRMLRT9" class="item journalArticle">
+			<h2>My mission in Ireland: Henry Jordan and Queensland immigration 1860-67</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Jennifer Harrison</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Between December 1848 when the first immigrant vessel, the &apos;Artemisia&apos;, arrived in Moreton Bay and December 1859 when the colony of Queensland was proclaimed, the newly developing north-eastern territory of New South Wales received 48 immigrant ships under the auspices of the New South Wales government. Since 1840 the Colonial Land and Emigration Commissioners [CLEC] in London, had acted for colonial governments to recruit migrants and arrange passages. As a result, the area&apos;s population had grown from a mere 1,599 in 1848 to 23,450 by 10 December 1859 with proclamation of the first British colony granted responsible government from its inception.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2016</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>My mission in Ireland</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>23</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>158–174</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Queensland history journal</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1836-5477</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/2/2025, 1:33:15 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/2/2025, 1:33:15 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Political science</li>
+					<li>Emigration and immigration</li>
+					<li>Administration</li>
+					<li>Administrative law</li>
+					<li>Colonies</li>
+					<li>Colonization</li>
+					<li>Management</li>
+					<li>State, The</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_5SJ5AMFS">Jennifer Harrison - 2016 - My mission in Ireland Henry Jordan and Queensland immigration 1860-67.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_WFQT6MFB" class="item journalArticle">
+			<h2>The 1878 Elections That Saved Townsville</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Joseph M Janecek</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>The 1878 election was one of the most spiteful to be held in the Charters Towers and Kennedy districts. Although the outcome did not profoundly affect Charters Towers, it did influence the future of Townsville and Bowen. This paper discusses the candidates, their election campaigns, the issues, and outcomes.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2011</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>21</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>339–352</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Queensland history journal</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>5</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1836-5477</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/2/2025, 1:30:56 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/2/2025, 1:30:56 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>History</li>
+					<li>Political science</li>
+					<li>Elections</li>
+					<li>Political campaigns</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_57LNP9HY">Joseph M Janecek - 2011 - The 1878 Elections That Saved Townsville.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_P8JAH5GQ" class="item journalArticle">
+			<h2>Population characteristics, health and social issues among Filipinas in Queensland, Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Margaret Kelaher</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Gail Williams</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Lenore Manderson</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Women from the Philippines constitute one of the largest groups of female immigrants from Asia to Australia. Most women migrate to marry Australian men or to join Australian husbands. Research has tended to view Filipinas&apos; health in Australia as intrinsically linked to their marriages rather than to the characteristics of the society in which they now live. Focus on cross-cultural marriages has tended to deny the impact of structural factors, such as non-recognition of educational qualifications, on the adaptation of women to life in Australia. This paper explores the impact of immigration experience, employment, social support, relationship issues and use of health services on the health and well-being of 482 Philippines-born women in the state of Queensland. Socio-economic issues emerged as major determinants of women&apos;s well-being and satisfaction with life in Australia. Reducing inequities in employment and overcoming logistical barriers to service access may be the most effective ways of improving the health and well-being of Filipinas in Australia.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2001-01</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>EBSCOhost</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://catalogue.nla.gov.au/Record/000000/Offsite?url=https%3a%2f%2fsearch.ebscohost.com%2flogin.aspx%3fdirect%3dtrue%26db%3da9h%26AN%3d4139663%26site%3deds-live">https://catalogue.nla.gov.au/Record/000000/Offsite?url=https%3a%2f%2fsearch.ebscohost.com%2flogin.aspx%3fdirect%3dtrue%26db%3da9h%26AN%3d4139663%26site%3deds-live</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/9/2025, 4:30:20 PM</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Taylor &amp; Francis Ltd</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>27</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>101-114</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Journal of Ethnic &amp; Migration Studies</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/13691830123645">10.1080/13691830123645</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1369183X</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 4:30:20 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 4:30:20 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Queensland</li>
+					<li>QUEENSLAND</li>
+					<li>CROSS-CULTURAL MARRIAGE</li>
+					<li>FILIPINO MIGRATION</li>
+					<li>FILIPINO women</li>
+					<li>HEALTH</li>
+					<li>WOMEN immigrants</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_X2TC94ZW">Kelaher et al. - 2001 - Population characteristics, health and social issues among Filipinas in Queensland, Australia.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_ZE7RZIUK" class="item book">
+			<h2>Australia&apos;s Immigration Revolution</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Book</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Andrew Markus</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>James Jupp</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Peter McDonald</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2010</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>ProQuest Ebook Central</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="http://ebookcentral.proquest.com/lib/une/detail.action?docID=458362">http://ebookcentral.proquest.com/lib/une/detail.action?docID=458362</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/2/2025, 3:05:59 PM</td>
+					</tr>
+					<tr>
+					<th>Place</th>
+						<td>Sydney, AUSTRALIA</td>
+					</tr>
+					<tr>
+					<th>Publisher</th>
+						<td>Allen &amp; Unwin</td>
+					</tr>
+					<tr>
+					<th>ISBN</th>
+						<td>978-1-74176-610-3</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/2/2025, 3:05:59 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/2/2025, 3:05:59 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Australia -- Emigration and immigration -- Economic aspects.</li>
+					<li>Australia -- Emigration and immigration -- Government policy.</li>
+					<li>Australia -- Population -- 21st century.</li>
+					<li>Emigration and immigration.</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_RWDKYMIE">ProQuest Ebook Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_F8ND6C2X" class="item journalArticle">
+			<h2>Melanesians in North Queensland: The retention of indigenous religious and magical practices</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>P. M. Mercer</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>C. R. Moore</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1976</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Melanesians in North Queensland</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Canberra
+Publisher: Taylor &amp; Francis Group</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>11</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>66–88</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>The Journal of Pacific history</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/00223347608572291">10.1080/00223347608572291</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0022-3344</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/2/2025, 1:34:37 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/2/2025, 1:34:37 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Communities</li>
+					<li>Immigrants</li>
+					<li>Island life</li>
+					<li>Magic</li>
+					<li>Melanesia</li>
+					<li>Migrant agricultural laborers</li>
+					<li>Oral tradition</li>
+					<li>Pacific Islanders</li>
+					<li>Plantations</li>
+					<li>Queensland</li>
+					<li>Religion</li>
+					<li>Supernatural</li>
+					<li>Witchcraft</li>
+					<li>Witches</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_E55DFTVM">Mercer and Moore - 1976 - Melanesians in North Queensland The retention of indigenous religious and magical practices.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_DCBXJQGJ" class="item journalArticle">
+			<h2>&apos;Black Italians&apos; in the Sugar Fields of North Queensland: a Reflection on Labour Inclusion and Cultural Exclusion in Tropical Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Vanda Moraes-Gorecki</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>‘Black Italians’ is a metaphorical expression constructed under particular social‐historical conditions of power struggles in colonial Australia. It originated in processes associated with the legitimation of capital expansion, the appropriation of labour, and the formation of ethnic and racial representations of identity. This paper attempts to discuss the structures and practices which gave rise to this metaphor.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1994</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>&apos;Black Italians&apos; in the Sugar Fields of North Queensland</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Oxford, UK
+Publisher: Blackwell Publishing Ltd</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>5</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>306–319</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>The Australian journal of anthropology</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1111/j.1835-9310.1994.tb00183.x">10.1111/j.1835-9310.1994.tb00183.x</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1-2</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1035-8811</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/3/2025, 8:26:05 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/3/2025, 8:26:05 AM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_696R4YLY">Moraes-Gorecki - 1994 - &apos;Black Italians&apos; in the Sugar Fields of North Queensland a Reflection on Labour Inclusion and Cultu.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_L87S7BUL" class="item journalArticle">
+			<h2>Between life, security and rights: Framing the interdiction of ‘boat migrants’ in the Central Mediterranean and Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Violeta Moreno-Lax</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Daniel Ghezelbash</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Natalie Klein</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This article sets out two case studies to examine the evolving reality of ‘boat migration’ and the intersecting legal frameworks at play. Our analysis takes a systemic integration approach to reflect on the complex dynamics underpinning responses to the phenomenon in Australia and the Central Mediterranean. The regime that governments purport to act under in any given instance reflects the way they choose to frame incidents and possibly exploit legal gaps in, or contested interpretations of, the relevant rules. The ‘closed ports’ strategy adopted by Italy and Malta against the
+MV Lifeline
+and the detention-at-sea policy pursued by Australia are investigated from the competing perspectives of what we call the ‘security lens’ and the ‘humanitarian lens’ to demonstrate how a good faith interpretation of the applicable (if apparently conflicting and overlapping) norms can (and should) be mobilized to save lives, and how that goal is unduly undercut when security concerns trump humanitarian interests.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2019</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Between life, security and rights</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Cambridge
+Publisher: University Press</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>32</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>715–740</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Leiden journal of international law</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1017/S0922156519000451">10.1017/S0922156519000451</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>4</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0922-1565</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 12:24:56 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 12:24:56 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Immigrants</li>
+					<li>Migrant agricultural laborers</li>
+					<li>Altruism</li>
+					<li>Case studies</li>
+					<li>Emigration and immigration law</li>
+					<li>Harbors</li>
+					<li>Human rights</li>
+					<li>Humanitarianism</li>
+					<li>International law</li>
+					<li>Jurisdiction</li>
+					<li>Law enforcement</li>
+					<li>Maritime law</li>
+					<li>Migration</li>
+					<li>Sovereignty</li>
+					<li>Statelessness</li>
+					<li>Territorial waters</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_8BIIW3GJ">Moreno-Lax et al. - 2019 - Between life, security and rights Framing the interdiction of ‘boat migrants’ in the Central Medite.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_QLSSF4MY" class="item journalArticle">
+			<h2>Peopling a new colony: Henry Jordan, land orders, and Queensland immigration, 1861–7*</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Kenneth Morgan</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This article analyses the first years of the land order system of immigration that dominated Queensland&apos;s settlement as a colony. Queensland issued land orders worth £30 per adult to fare-paying British and Irish immigrants who were mechanics, agriculturalists and people with modest amounts of capital. This form of immigration was facilitated through the work of an Emigration Commissioner – later an Agent-General – based in the British Isles. Henry Jordan held these positions in the period 1861–6. The article argues that land orders only partly met their intended outcomes, but that Jordan&apos;s activities were essential for the scheme&apos;s limited success.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2021-05-19</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Peopling a new colony</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>EBSCOhost</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://catalogue.nla.gov.au/Record/000000/Offsite?url=https%3a%2f%2fsearch.ebscohost.com%2flogin.aspx%3fdirect%3dtrue%26db%3da9h%26AN%3d151285116%26site%3deds-live">https://catalogue.nla.gov.au/Record/000000/Offsite?url=https%3a%2f%2fsearch.ebscohost.com%2flogin.aspx%3fdirect%3dtrue%26db%3da9h%26AN%3d151285116%26site%3deds-live</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/9/2025, 4:05:07 PM</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Oxford University Press / USA</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>380-396</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Historical Research</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1093/hisres/htab002">10.1093/hisres/htab002</a></td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>09503471</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 4:05:07 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 4:05:07 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>AGRICULTURAL scientists</li>
+					<li>BRITISH Isles</li>
+					<li>COLONIES</li>
+					<li>EMIGRATION &amp; immigration</li>
+					<li>ISLANDS</li>
+					<li>QUEENSLAND</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_8TJFNLZE">EBSCO Full Text					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_6FZ4QV9T" class="item journalArticle">
+			<h2>Child Migration Schemes: A Dark and Hidden Episode of Australia&apos;s History Revealed</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Andrew Murray</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This is the text of a keynote address to an international congress on child migration. The author looks at the history of child migration in Australia, the groups that have brought attention to their needs and the British and Australian inquiries that resulted. Data on the plight of institutionalised children is included.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2003</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Child Migration Schemes</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Australian Institute of Political Science</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>75</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>27–31</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>AQ (Balmain, N.S.W.)</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1443-3605</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 12:39:49 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 12:39:49 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Australia</li>
+					<li>Emigration and immigration</li>
+					<li>Immigrants</li>
+					<li>Emigration and immigration law</li>
+					<li>Child abuse</li>
+					<li>Child care</li>
+					<li>Child labor</li>
+					<li>Child sexual abuse</li>
+					<li>Child welfare</li>
+					<li>Children</li>
+					<li>Cost estimates</li>
+					<li>Legislative bodies</li>
+					<li>Rape</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_2S2UIBU4">Murray - 2003 - Child Migration Schemes A Dark and Hidden Episode of Australia&apos;s History Revealed.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_XJPU6CJJ" class="item journalArticle">
+			<h2>Pointers to prosperity: London Times journalist Flora Shaw advises readers on investment and migration opportunities in Queensland 1892</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Patricia Clarke</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>The Queensland Government welcomed Flora Shaw, a journalist on assignment from The Times of London, when she arrived in Brisbane on the first leg of her tour of the Australian colonies in 1892. The Premier, Sir Samuel Griffith, believed what she wrote had the potential to increase British migration and investment, both vital to the economy during the 1890s depression. Soon after she arrived, Griffith and other ministers called on her, and from then on she was accorded VIP treatment. The Government arranged the best cabins on ships and special compartments on trains. She was always met on arrival, whether at ports, railway stations or bush outposts and a driver was always on hand to take her to her next destination, if necessary by relays of horses. Meetings were lined up with local civic leaders, senior public servants, technical experts, representatives of political organisations, employer groups and trade unionists.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2023</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Pointers to prosperity</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Brisbane, Qld
+Publisher: Royal Historical Society of Queensland</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>25</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>375–388</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Queensland history journal</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>5</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1836-5477</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/16/2025, 3:53:38 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/16/2025, 3:53:38 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Attitudes</li>
+					<li>Influence</li>
+					<li>Investments</li>
+					<li>Journalists</li>
+					<li>Migrations of nations</li>
+					<li>Planning</li>
+					<li>Politics and government</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_CEVQ8T2M">Patricia Clarke - 2023 - Pointers to prosperity London Times journalist Flora Shaw advises readers on investment and migrati.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_P3CVKPRC" class="item journalArticle">
+			<h2>Placing the Maltese in their proper light: Challenging racial boundaries, discrimination and restrictions against Maltese migrants during World War II</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Patrick Ferry</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Luis Calleja</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Before World War II (WW2), Queensland was home to a small community of Maltese migrants, who worked mainly on the sugar cane fields around Mackay and Innisfail. Although small in numbers, this community was controversial due to negative racial and class-based prejudices which derided the Maltese as &apos;dagoes&apos;, threatening Australian wages and standards of living. These prejudices resulted in significant restrictions on Maltese migration, despite the Maltese being British subjects like Australians. WW2 presented opportunities for the Maltese in Australia to challenge this discrimination and change perceptions about their suitability as migrants. Whilst Malta&apos;s heroic wartime defence against Axis attacks played a major part in this, the Commissioner for Malta and Mackay&apos;s Maltese community also actively attempted to reshape the narrative, for instance, by promoting images of Maltese serving in the Australian military. This can be seen as attempting to break down cultural distance and negative stereotypes between the Maltese &apos;out group&apos; and the Australian majority. Although the impact of specific initiatives cannot be measured, and some pre-war prejudices lingered, the war and new &apos;populate or perish&apos; immigration policies which emerged from it represented a turning point in perceptions about the suitability of Maltese migrants. Indeed, the &apos;1948 Australia - Malta Assisted Passage Agreement&apos; officially recognised them as preferred migrants.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2023</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Placing the Maltese in their proper light</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Brisbane, Qld
+Publisher: Royal Historical Society of Queensland</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>25</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>389–404</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Queensland history journal</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>5</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1836-5477</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/7/2025, 5:56:29 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/7/2025, 5:56:29 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Emigration and immigration</li>
+					<li>International cooperation</li>
+					<li>Maltese</li>
+					<li>Military assistance, Australian</li>
+					<li>World War, 1939-1945</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_TMYN36MF">Ferry and Calleja - Placing the Maltese in their proper light Challenging racial boundaries, discrimination and restric.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_6NU2FZUS" class="item journalArticle">
+			<h2>Migration to Australia since federation: a guide to the statistic</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Janet Phillips</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Michael Klapdor</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Joanne Simon-Davies</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>Zotero</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/3/2025, 8:30:19 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/3/2025, 8:30:19 AM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_42KCE4V2">Phillips et al. - Migration to Australia since federation a guide to the statistic.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_Q64K7RDY" class="item book">
+			<h2>Southern Europeans in Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Book</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Charles Archibald Price</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1963</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Call Number</th>
+						<td>325.94 P946s</td>
+					</tr>
+					<tr>
+					<th>Place</th>
+						<td>Melbourne</td>
+					</tr>
+					<tr>
+					<th>Publisher</th>
+						<td>Oxford University Press</td>
+					</tr>
+					<tr>
+					<th># of Pages</th>
+						<td>xvi+342</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 11:28:18 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 11:28:18 AM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Australia</li>
+					<li>Emigration and immigration</li>
+					<li>Minorities</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_AZ9RC7KB">Chapter 1 - Introduction In Southern Europeans in Australia					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_MY72V36P" class="item journalArticle">
+			<h2>&apos;The Most Manly Class that Exists&apos;: British Gentlemen on the Queensland Frontier</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Robert Hogg</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Throughout the nineteenth century, young men of genteel background and public school education left Britain to seek wealth and opportunity in the colonies. On the Queensland frontier in the mid-nineteenth century, these &apos;emigrant gentlemen&apos;, the scions of the aristocracy and ambitious middle-class, styled themselves as an elite caste, assuming enormous political and social power. They placed great importance on their gentlemanly virtues, and sought to maintain and police their status via a configuration of practices through which they &apos;performed&apos; as gentlemen. Through such practices as social monitoring and patronage, they established and defended a position of masculine dominance among frontier men, hoping to recreate and maintain the social and gender boundaries of the metropole.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2011</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>&apos;The Most Manly Class that Exists&apos;</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>13</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>65–84</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Journal of Australian colonial history</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1441-0370</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 4:28:22 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 4:28:22 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>History</li>
+					<li>Emigration and immigration</li>
+					<li>Frontier and pioneer life</li>
+					<li>Masculinity</li>
+					<li>Middle class men</li>
+					<li>Public schools</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_IAVQ43WZ">Robert Hogg - 2011 - &apos;The Most Manly Class that Exists&apos; British Gentlemen on the Queensland Frontier.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_WNDKG6TG" class="item journalArticle">
+			<h2>Generation and Place of Residence in the Symbolic and Lived Identity of Maltese in Sydney, Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Gordon Waitt</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Rebecca M. Galea</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Patrick Rawstorne</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Maltese symbolic and lived identities are examined to explore the changes that occur in cultural identity between generations and place of residence within metropolitan Sydney. The results are employed to problematise Sandberg&apos;s straight-line theory, that is, that ethnic identity will decline with each successive generation. Our results, exploring ethnic identity in both its symbolic and lived-experience forms, confirm arguments that global cities are not homogeneous territories, as implied by Sandberg, but rather sites of cultural difference. The results suggest that, regardless of place of residence or generation, the symbolic Maltese identities remain similar, combating the old, naive assimilationist assumption that all immigrants would quickly abandon their ethnic identity, and favouring arguments supporting hybrid identities. Similarly, results for Maltese identity as lived experience suggest that their Maltese identity is less important only for those second-generation Maltese living in census collection districts with less than 10 per cent of the population born in Malta.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2001</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Sydney
+Publisher: Taylor &amp; Francis Group</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>32</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>77–91</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Australian geographer</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1080/00049180020006154">10.1080/00049180020006154</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0004-9182</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 12:33:49 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 12:33:49 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Australia</li>
+					<li>Immigrants</li>
+					<li>Migrant agricultural laborers</li>
+					<li>Maltese</li>
+					<li>Cities and towns</li>
+					<li>Culture</li>
+					<li>Europeans</li>
+					<li>Generations</li>
+					<li>Globalization</li>
+					<li>Group identity</li>
+					<li>Human geography</li>
+					<li>Multiculturalism</li>
+					<li>Oceania</li>
+					<li>Surveys</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_ZVPEXNMJ">Waitt et al. - 2001 - Generation and Place of Residence in the Symbolic and Lived Identity of Maltese in Sydney, Australia.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_2C6XPU2Q" class="item journalArticle">
+			<h2>Population change between 1986 and 1996 in Australia: population numbers, components of change and age profiles</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>G. Ward</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>R. Barker</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>&quot;This paper represents a preliminary analysis of the release of 1996 Census-based ERP [estimates of resident population] by examining regional population shifts and components of population change in Australia between 1986 and 1996... With particular reference to Queensland, this paper also examines changes in the age profiles of regional populations over the decade to June 1996. Changes in the population structure of Queensland&apos;s growth regions are compared with those of regions experiencing population decline.&quot;</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1997</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Population change between 1986 and 1996 in Australia</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Place: Australia</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>5</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>34–44</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>People and place (Clayton)</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1039-4788</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/2/2025, 1:24:06 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/2/2025, 1:24:06 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Age factors</li>
+					<li>Australia</li>
+					<li>Census</li>
+					<li>Demographic transition</li>
+					<li>Demography</li>
+					<li>Developed countries</li>
+					<li>Emigration and immigration</li>
+					<li>Geography</li>
+					<li>Islands of the Pacific</li>
+					<li>Population</li>
+					<li>Population Characteristics</li>
+					<li>Population Growth</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_STS57UT2">Ward and Barker - 1997 - Population change between 1986 and 1996 in Australia population numbers, components of change and a.pdf					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_MYTAQ2CK" class="item book">
+			<h2>Exclusions and admissions: Maltese arrivals at Australian ports, 1911-1946</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Book</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Barry York</td>
+					</tr>
+					<tr>
+						<th class="contributor">Contributor</th>
+						<td>Australian National University Centre for Immigration and Multicultural Studies</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1993</td>
+					</tr>
+					<tr>
+					<th>Language</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>Short Title</th>
+						<td>Exclusions and admissions</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Call Number</th>
+						<td>Q305.89277 Y61e</td>
+					</tr>
+					<tr>
+					<th>Place</th>
+						<td>Canberra</td>
+					</tr>
+					<tr>
+					<th>Publisher</th>
+						<td>Centre for Immigration &amp; Multicultural Studies, Research School of Social Sciences, Australian National University</td>
+					</tr>
+					<tr>
+					<th>ISBN</th>
+						<td>978-0-7315-1593-6</td>
+					</tr>
+					<tr>
+					<th>Series</th>
+						<td>Maltese Australian studies ; no. 3</td>
+					</tr>
+					<tr>
+					<th># of Pages</th>
+						<td>20</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 1:15:27 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 1:15:27 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Australia</li>
+					<li>Emigration and immigration</li>
+					<li>Maltese</li>
+					<li>Malta</li>
+				</ul>
+			</li>
+
+
+			<li id="item_BUWU4TF4" class="item journalArticle">
+			<h2>The search for Maltese troublemakers and criminals in Australia</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Yosanne Vella</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This paper describes the author&apos;s search in Public Record Office Victoria and in Australian newspapers for criminal activity by the Maltese. What started as a search to find Maltese women criminals in the nineteenth-century evolved and changed into a more general search dictated by the history and availability of the historical sources. This paper gives some background on Maltese migration to Australia, followed by an explanation of how this history constrained the particular study on Maltese criminals. A possible explanation is given as to why no Maltese women criminals were found and how other women criminals proved to be quite interesting. Some comparison is also made between the crimes of Australian women who were not Maltese in the nineteenth century and the crimes of Maltese women in Malta in the eighteenth century. The author&apos;s first encounter with Maltese women in the records are mentioned, and then the focus shifts to the small number of Maltese male criminals in Australia, giving some indication of what the nature of their crimes were in early twentieth-century Australia.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2016</td>
+					</tr>
+					<tr>
+					<th>Library Catalog</th>
+						<td>une.primo.exlibrisgroup.com</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>112–125</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Provenance (North Melbourne, Vic.)</td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>15</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1832-2522</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 12:36:03 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 12:36:03 PM</td>
+					</tr>
+				</table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Research</li>
+					<li>Emigration and immigration</li>
+					<li>Maltese</li>
+					<li>Eighteenth century</li>
+					<li>Female offenders</li>
+					<li>Legal status, laws, etc.</li>
+					<li>Methodology</li>
+					<li>Social aspects</li>
+				</ul>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_4ZXF5Q3N">PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_ZL7CBXH7" class="item webpage">
+			<h2>SS Asturias</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Web Page</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="http://www.ssasturias.net/passengerlists.html">http://www.ssasturias.net/passengerlists.html</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/9/2025, 11:16:57 AM</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 11:16:57 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 11:16:57 AM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_AF4N47Y2">SS Asturias					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_BH37ZILU" class="item webpage">
+			<h2>Agreement between the Government of Australia and the Government of Malta relating to Migration [1949] ATS 23</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Web Page</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.austlii.edu.au/au/other/dfat/treaties/ATS/1949/23.html">https://www.austlii.edu.au/au/other/dfat/treaties/ATS/1949/23.html</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/9/2025, 12:41:50 PM</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/9/2025, 12:41:50 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/9/2025, 12:41:50 PM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_SZ67H43F">Agreement between the Government of Australia and the Government of Malta relating to Migration [1949] ATS 23					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_B8SKSIRR" class="item webpage">
+			<h2>Passenger arrival records | naa.gov.au</h2>
+				<table>
+					<tr>
+						<th>Item Type</th>
+						<td>Web Page</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.naa.gov.au/explore-collection/immigration-and-citizenship/passenger-arrival-records">https://www.naa.gov.au/explore-collection/immigration-and-citizenship/passenger-arrival-records</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>3/12/2025, 5:09:56 PM</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>3/12/2025, 5:09:56 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>3/12/2025, 5:09:56 PM</td>
+					</tr>
+				</table>
+				<h3 class="attachments">Attachments</h3>
+				<ul class="attachments">
+					<li id="item_XTDI6CC2">Passenger arrival records | naa.gov.au					</li>
+				</ul>
+			</li>
+
+		</ul>
+	</body>
+</html>
